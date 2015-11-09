@@ -5,6 +5,7 @@
   "license": "",
   "dependencies": {
     "angular": "^1.4.7",
+    "body-parser": "^1.14.1",
     "express": "^4.13.3"
   },
   "devDependencies": {},
