@@ -1,0 +1,14 @@
+{
+  "name": "nba_shotcharts",
+  "version": "0.0.0",
+  "main": "",
+  "license": "",
+  "dependencies": {
+    "angular": "^1.4.7",
+    "express": "^4.13.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon ./server/app.js"
+  }
+}
