@@ -18,27 +18,29 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+  Basketball Viz
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
-
+  Vizualized stats for the avid NBA fan.
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
-
+  Find any NBA player in any NBA season and get vizualized data of shot charts, assist graphs, rebounding percentages, and more.  Find out which areas on the court Stephen Curry lights it up and which areas he struggles with.  Find out how Chris Paul's assists are distributed among his teammates.  Find out the shooting percentages of opponents against Rudy Gobert.  Basketball Viz queries the NBA database with each request so will always get the most recent, up-to-date stats.
 ## Problem ##
   > Describe the problem your product solves.
-
+  Major basketball sites are either outdated (Yahoo) or filled with ads and videos (ESPN).  Sites that offer visualization of data are not up-to-date and usually are associated with an article on a particular player or team.  Avid fans such as myself often find the box score lacking.
 ## Solution ##
   > Describe how your product elegantly solves the problem.
-
+  Basketball Viz provides an app that is clean and easy to use.  It sends requests to NBA.com for up to date stats and will use Angular to dynamically update the one-page app.
 ## Quote from You ##
   > A quote from a spokesperson in your company.
-
+  "Basketball Viz is the new way to assess the skill level of a player, a dynamic and vizual way to look at stats, and a perfect tool for curious fans who find the normal box score lacking or for prospects who want to imitate their favorite players."
 ## How to Get Started ##
   > Describe how easy it is to get started.
-
+  Just go to the web app, type in a player name (any player who has ever played in the NBA), select a season, select a stat type, and hit submit.
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
-
+  "Basketball Viz is a great way to track my favorite players and see how they perform on the court.  It's also great for going back in time and seeing how Jordan's shot chart compares to Lebron's."
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+  Try out our app at <website> or on the app store <link>!  
