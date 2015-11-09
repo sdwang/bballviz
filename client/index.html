@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="bballApp">
   <head>
   </head>
   <body>
+    <h1>
+      Basketball Viz
+    </h1>
     <form>
       <input type="text" placeholder="Find a player"></input>
-      <button>
+      <select>
+        <option value="year">Select a year</option>
+      </select>
+      <select>
+        <option value="statType">Select a stat type</option>
+        <option value="shotChart">Shot Chart</option>
+      </select>
+      <a href="#/shotChart">
         Submit
-      </button>
+      </a>
     </form>
-    <image src="assets/nba-halfcourt.png"/>
+    <div id="statsDisplay" ng-view>
+    </div>
   </body>
 </html>
