@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html ng-app="bballApp">
   <head>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="shotChart/shotChart.js"></script>
+    <script src="app.js"></script>
   </head>
   <body>
     <h1>
@@ -15,17 +19,12 @@
         <option value="statType">Select a stat type</option>
         <option value="shotChart">Shot Chart</option>
       </select>
-      <a href="#/shotChart">
+      <a ui-sref="shotChart">
         Submit
       </a>
     </form>
-    <div id="statsDisplay" ng-view>
-    </div>
+    <div ui-view></div>
 
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="shotChart/shotChart.js"></script>
-    <script src="app.js"></script>
 
   </body>
 </html>
