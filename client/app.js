@@ -1,19 +1,13 @@
 var app = angular.module('bballApp', [
   'bballApp.shotChart',
-  'ngRoute'])
+  'ui.router'])
 
-.config(function($routeProvider) {
-  $routeProvider
-    .when('/', {
-      templateURL: 'shotChart/shotChart.html',
-      controller: 'ShotChartController'
-    })
-    .when('/shotChart', {
-      templateURL: 'shotChart/shotChart.html',
-      controller: 'ShotChartController'
-    })
-})
-
-.run(function($rootScope) {
-
-})
+.config(function($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise("/");
+  $stateProvider
+  .state('shotChart', {
+    url: '/shotChart',
+    templateUrl: 'shotChart/shotChart.html',
+    controller: 'ShotChartController'
+  });
+});

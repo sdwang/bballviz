@@ -6,7 +6,8 @@
   "dependencies": {
     "angular": "^1.4.7",
     "body-parser": "^1.14.1",
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "ui-router": "^0.2.15"
   },
   "devDependencies": {},
   "scripts": {
