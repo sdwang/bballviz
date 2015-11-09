@@ -7,7 +7,7 @@ var app = angular.module('bballApp', [
     .when('/shotChart', {
       templateURL: 'shotChart/shotChart.html',
       controller: 'ShotChartController'
-    }
+    })
 })
 
 .run(function($rootScope) {
