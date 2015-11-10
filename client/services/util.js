@@ -13,19 +13,25 @@ angular.module('bballApp.util', [])
                   data: []
                 }];
 
+  var missed = [];
+  var made = [];
+
   var parseData = function(array) {
     //X-LOC: i=17, Y-LOC: i=18, madeFlag: i=20
+    //x axis: -250 to 250, y axis: -20 to 200
     for(var i = 0; i < array.length; i++) {
       var shot = [];
       shot[0] = array[i][17];
       shot[1] = array[i][18];
       if(array[i][20] === 1) {
         series[1].data.push(shot);
+        made.push(shot);
       } else if(array[i][20] === 0) {
         series[0].data.push(shot);
+        missed.push(shot);
       }
     }
-    console.log(series);
+    console.log(series[0].data[0][0], typeof series[0].data[0][0]);
   };
 
 
