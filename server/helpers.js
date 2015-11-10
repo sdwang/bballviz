@@ -1,5 +1,8 @@
 var request = require('request');
+var promise = require('bluebird');
+var q = require('q');
 var fs = require('fs');
+// var request = promise.promisify(request);
 
 module.exports.reqShotChartData = function(url, callback) {
   var parseURL = url.split('/');
@@ -7,31 +10,42 @@ module.exports.reqShotChartData = function(url, callback) {
   var year = parseURL[3];
 
   console.log(parseURL);
-
-  // request('http://stats.nba.com/stats/playerdashboardbyshootingsplits?DateFrom=&DateTo=&GameSegment=&LastNGames=0&LeagueID=00&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=0&PaceAdjust=N&PerMode=Totals&Period=0&PlayerID=' + playerID + '&PlusMinus=N&Rank=N&Season=' + year + '&SeasonSegment=&SeasonType=Regular+Season&ShotClockRange=&VsConference=&VsDivision=',
-  //   function (error, response, body) {
-  //     if (!error && response.statusCode == 200) {
-  //       console.log(JSON.parse(body).resultSets[3]);
-  //     }
-  //   });
-
-
+  var deferred = q.defer();
   request('http://stats.nba.com/stats/shotchartdetail?CFID=33&CFPARAMS=' + year + '&ContextFilter=&ContextMeasure=FGA&DateFrom=&DateTo=&GameID=&GameSegment=&LastNGames=0&LeagueID=00&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PaceAdjust=N&PerMode=PerGame&Period=0&PlayerID=' + playerID + '&PlusMinus=N&Position=&Rank=N&RookieYear=&Season=' + year + '&SeasonSegment=&SeasonType=Regular+Season&TeamID=0&VsConference=&VsDivision=&mode=Advanced&showDetails=0&showShots=1&showZones=0',
     function (error, response, body) {
-      if(error) {
-        callback(error, null);
-      } else {
-        console.log('response received from nba.com');
-        //console.log(JSON.parse(body).resultSets[0].rowSet);
-        callback(null, JSON.parse(body).resultSets[0].rowSet);
-      //   fs.writeFile('../db/currentPlayer.txt', body, function(err) {
-      //     if(err) {
-      //       throw err;
-      //     }
-      //     console.log('current player saved in db!');
-      //   });
+      if (!error && response.statusCode == 200) {
+        deferred.resolve(JSON.parse(body).resultSets[0].rowSet);
+        
+        // console.log(JSON.parse(body).resultSets[3]);
       }
     });
+  return deferred.promise;
+
+  //'http://stats.nba.com/stats/playerdashboardbyshootingsplits?DateFrom=&DateTo=&GameSegment=&LastNGames=0&LeagueID=00&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=0&PaceAdjust=N&PerMode=Totals&Period=0&PlayerID=' + playerID + '&PlusMinus=N&Rank=N&Season=' + year + '&SeasonSegment=&SeasonType=Regular+Season&ShotClockRange=&VsConference=&VsDivision=',
+
+  // var url = 'http://stats.nba.com/stats/shotchartdetail?CFID=33&CFPARAMS=' + year + '&ContextFilter=&ContextMeasure=FGA&DateFrom=&DateTo=&GameID=&GameSegment=&LastNGames=0&LeagueID=00&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PaceAdjust=N&PerMode=PerGame&Period=0&PlayerID=' + playerID + '&PlusMinus=N&Position=&Rank=N&RookieYear=&Season=' + year + '&SeasonSegment=&SeasonType=Regular+Season&TeamID=0&VsConference=&VsDivision=&mode=Advanced&showDetails=0&showShots=1&showZones=0';
+  // var url = 'http://www.google.com';
+  //  return request(url)
+  //  .then(function(data) {
+  //   // console.log(data.body);
+  //   return JSON.parse(data.body).resultSets[0].rowSet;
+  //  });
+  // return request(url,
+  //   function (error, response, body) {
+  //     if(error) {
+  //       callback(error, null);
+  //     } else {
+  //       console.log('response received from nba.com');
+  //       //console.log(JSON.parse(body).resultSets[0].rowSet);
+  //       callback(null, JSON.parse(body).resultSets[0].rowSet);
+  //     //   fs.writeFile('../db/currentPlayer.txt', body, function(err) {
+  //     //     if(err) {
+  //     //       throw err;
+  //     //     }
+  //     //     console.log('current player saved in db!');
+  //     //   });
+  //     }
+  //   });
 
 };
 
