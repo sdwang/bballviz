@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html ng-app="bballApp">
-  <head>
+  <head>    
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="shotChart/shotChart.js"></script>
+    <script src="form/form.js"></script>
+    <script src="services/services.js"></script>
     <script src="app.js"></script>
   </head>
   <body>
     <h1>
       Basketball Viz
     </h1>
-    <form>
+    <form ng-controller="FormController">
       <input type="text" placeholder="Find a player"></input>
       <select>
         <option value="year">Select a year</option>
       </select>
-      <select>
-        <option value="statType">Select a stat type</option>
+      <select ng-model="statType">
+        <option>Select a stat type</option>
         <option value="shotChart">Shot Chart</option>
+        <option value="assistGraph">Assist Graph</option>
       </select>
-      <a ui-sref="shotChart">
+      <button id='submit' ng-click="statSelector()">
         Submit
-      </a>
+      </button>
     </form>
     <div ui-view></div>
 
