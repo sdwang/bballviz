@@ -1,4 +1,4 @@
-angular.module('bballApp.services', [])
+angular.module('bballApp.util', [])
 
 .factory('Utility', function($scope, $http) {
 
@@ -22,4 +22,4 @@ angular.module('bballApp.services', [])
     // statSelector: statSelector
     getShotChart: getShotChart
   };
-})
+});
