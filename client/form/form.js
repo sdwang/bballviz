@@ -12,9 +12,8 @@ angular.module('bballApp.form', [
     var submitElement = angular.element( document.querySelector('#submit'));
     submitElement.attr('ui-sref', this.statType);
     $state.go(this.statType);
-    console.log(this.getPlayerID(this.player));
     if(this.statType === "shotChart") {
-      this.getShotChartData(this.player, this.year);
+      this.getShotChart(this.getPlayerID(this.player), this.year);
     }
   };
 
@@ -22,10 +21,8 @@ angular.module('bballApp.form', [
     return Database.playerDatabase[player];
   };
 
-  $scope.getShotChartData = function(player, year) {
-    console.log('getShotChartData')
-    console.log(player);
-    console.log(year);
+  $scope.getShotChart = function(playerID, year) {
+    Utility.getShotChartData(playerID, year);
   }
 
 }]);
