@@ -3,9 +3,10 @@ angular.module('bballApp.form', [
   // "$state",
   // //"bballApp.database",
   // "bballApp.util"
+  // "Utility"
   ])
 
-.controller('FormController', ['$scope', '$state', 'bballApp.util', function($scope, $state, Utility) {
+.controller('FormController', ['$scope', '$state', 'Utility', 'Database', function($scope, $state, Utility, Database) {
   
   $scope.inputHandler = function() {
     var submitElement = angular.element( document.querySelector('#submit'));

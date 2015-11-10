@@ -1,6 +1,6 @@
 angular.module('bballApp.util', [])
 
-.factory('Utility', function($scope, $http) {
+.factory('Utility', function() {
 
   var getShotChart = function(player, year, statType) {
     return $http({

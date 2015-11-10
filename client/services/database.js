@@ -1,6 +1,6 @@
 angular.module('bballApp.database', [])
 
-.factory('Database', function($scope, $http) {
+.factory('Database', function() {
 
   var playerDatabase = {
     'Alaa Abdelnaby': 76001,
@@ -4029,6 +4029,10 @@ angular.module('bballApp.database', [])
     'Jim Zoet': 78647,
     'Bill Zopf': 78648,
     'Matt Zunic': 78650
-}
+};
+
+return {
+ playerDatabase: playerDatabase
+};
 
 });
