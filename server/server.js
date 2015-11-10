@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var helpers = require('./helpers');
 
 var app = express();
 
@@ -16,16 +17,9 @@ app.get('/', function(req, res) {
   res.render('index.html');
 });
 
-app.get('/http://stats.nba.com/stats/playerdashboardbyshootingsplits?*',
-        function(req, res, next) {
-          console.log('getting to server');
-          res.status(200).send('shooting stats request received by server');
-          next();
-        });
-
 app.get('/shotchartdata/*', function(req, res, next) {
   console.log('getting to server');
-  console.log(req.path);
+  helpers.reqShotChartData(req.originalUrl);
   res.status(200).send('Test GET request recieved by server');
   next();
 });
