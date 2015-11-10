@@ -1,10 +1,4 @@
-angular.module('bballApp.form', [
-  // "$scope",
-  // "$state",
-  // //"bballApp.database",
-  // "bballApp.util"
-  // "Utility"
-  ])
+angular.module('bballApp.form', [])
 
 .controller('FormController', ['$scope', '$state', 'Utility', 'Database', function($scope, $state, Utility, Database) {
   
@@ -23,6 +17,6 @@ angular.module('bballApp.form', [
 
   $scope.getShotChart = function(playerID, year) {
     Utility.getShotChartData(playerID, year);
-  }
+  };
 
 }]);
