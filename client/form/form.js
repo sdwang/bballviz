@@ -1,8 +1,11 @@
 angular.module('bballApp.form', [
-  'bballApp.database',
+  // "$scope",
+  // "$state",
+  // //"bballApp.database",
+  // "bballApp.util"
   ])
 
-.controller('FormController', function($scope, $state, Database) {
+.controller('FormController', ['$scope', '$state', 'bballApp.util', function($scope, $state, Utility) {
   
   $scope.inputHandler = function() {
     var submitElement = angular.element( document.querySelector('#submit'));
@@ -19,10 +22,9 @@ angular.module('bballApp.form', [
   };
 
   $scope.getShotChartData = function(player, year) {
-    
     console.log('getShotChartData')
     console.log(player);
     console.log(year);
   }
 
-});
+}]);

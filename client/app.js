@@ -1,7 +1,8 @@
 var app = angular.module('bballApp', [
+  'bballApp.database',
+  'bballApp.util',
   'bballApp.shotChart',
   'bballApp.form',
-  'bballApp.database',
   'ui.router'])
 
 .config(function($stateProvider, $urlRouterProvider) {
