@@ -16,15 +16,17 @@ app.get('/', function(req, res) {
   res.render('index.html');
 });
 
-// app.get('http://stats.nba.com/stats/playerdashboardbyshootingsplits?*',
-//         function(req, res) {
-//           res.data = 'hello, request recieved by server';
-//           return res.data;
-//         })
+app.get('/http://stats.nba.com/stats/playerdashboardbyshootingsplits?*',
+        function(req, res, next) {
+          console.log('getting to server');
+          res.status(200).send('shooting stats request received by server');
+          next();
+        });
 
-app.get('/test', function(req, res, next) {
+app.get('/shotchartdata/*', function(req, res, next) {
   console.log('getting to server');
-  res.status(200).send('hello');
+  console.log(req.path);
+  res.status(200).send('Test GET request recieved by server');
   next();
 });
 
