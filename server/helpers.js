@@ -1,7 +1,7 @@
 var request = require('request');
 var fs = require('fs');
 
-module.exports.reqShotChartData = function(url) {
+module.exports.reqShotChartData = function(url, callback) {
   var parseURL = url.split('/');
   var playerID = parseURL[2];
   var year = parseURL[3];
@@ -18,14 +18,18 @@ module.exports.reqShotChartData = function(url) {
 
   request('http://stats.nba.com/stats/shotchartdetail?CFID=33&CFPARAMS=' + year + '&ContextFilter=&ContextMeasure=FGA&DateFrom=&DateTo=&GameID=&GameSegment=&LastNGames=0&LeagueID=00&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PaceAdjust=N&PerMode=PerGame&Period=0&PlayerID=' + playerID + '&PlusMinus=N&Position=&Rank=N&RookieYear=&Season=' + year + '&SeasonSegment=&SeasonType=Regular+Season&TeamID=0&VsConference=&VsDivision=&mode=Advanced&showDetails=0&showShots=1&showZones=0',
     function (error, response, body) {
-      if (!error && response.statusCode == 200) {
-        console.log(JSON.parse(body).resultSets[0].rowSet);
-        fs.writeFile('../db/currentPlayer.txt', body, function(err) {
-          if(err) {
-            throw err;
-          }
-          console.log('current player saved in db!');
-        });
+      if(error) {
+        callback(error, null);
+      } else {
+        console.log('response received from nba.com');
+        //console.log(JSON.parse(body).resultSets[0].rowSet);
+        callback(null, JSON.parse(body).resultSets[0].rowSet);
+      //   fs.writeFile('../db/currentPlayer.txt', body, function(err) {
+      //     if(err) {
+      //       throw err;
+      //     }
+      //     console.log('current player saved in db!');
+      //   });
       }
     });
 

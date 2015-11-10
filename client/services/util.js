@@ -9,7 +9,7 @@ angular.module('bballApp.util', [])
       //url: '/test'
       url: '/shotchartdata/' + playerID + '/' + year
     }).then(function(resp) {
-      console.log(resp.data);
+      console.log('Data recieved by client:', resp.data);
       return resp.data;
     });
   };
