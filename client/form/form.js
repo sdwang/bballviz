@@ -8,17 +8,9 @@ angular.module('bballApp.form', [])
     Utility.playerID = this.getPlayerID(this.player);
     Utility.year = this.year;
     $state.go(this.statType);
-    // if(this.statType === "shotChart") {
-    //   this.getShotChart(this.getPlayerID(this.player), this.year);
-    // }
   };
 
   $scope.getPlayerID = function(player) {
     return Database.playerDatabase[player];
   };
-
-  // $scope.getShotChart = function(playerID, year) {
-  //   Utility.getShotChartData(playerID, year);
-  // };
-
 }]);
