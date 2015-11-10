@@ -5,18 +5,20 @@ angular.module('bballApp.form', [])
   $scope.inputHandler = function() {
     var submitElement = angular.element( document.querySelector('#submit'));
     submitElement.attr('ui-sref', this.statType);
+    Utility.playerID = this.getPlayerID(this.player);
+    Utility.year = this.year;
     $state.go(this.statType);
-    if(this.statType === "shotChart") {
-      this.getShotChart(this.getPlayerID(this.player), this.year);
-    }
+    // if(this.statType === "shotChart") {
+    //   this.getShotChart(this.getPlayerID(this.player), this.year);
+    // }
   };
 
   $scope.getPlayerID = function(player) {
     return Database.playerDatabase[player];
   };
 
-  $scope.getShotChart = function(playerID, year) {
-    Utility.getShotChartData(playerID, year);
-  };
+  // $scope.getShotChart = function(playerID, year) {
+  //   Utility.getShotChartData(playerID, year);
+  // };
 
 }]);

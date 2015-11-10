@@ -35,17 +35,17 @@ angular.module('bballApp.util', [])
   };
 
 
-  var getShotChartData = function(playerID, year) {
-    return $http({
-      method: 'GET',
-      //url: 'http://stats.nba.com/stats/playerdashboardbyshootingsplits?DateFrom=&DateTo=&GameSegment=&LastNGames=0&LeagueID=00&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=0&PaceAdjust=N&PerMode=Totals&Period=0&PlayerID=' + playerID + '&PlusMinus=N&Rank=N&Season=' + year + '&SeasonSegment=&SeasonType=Regular+Season&ShotClockRange=&VsConference=&VsDivision='
-      //url: '/test'
-      url: '/shotchartdata/' + playerID + '/' + year
-    }).then(function(resp) {
-      console.log('Data recieved by client');
-      parseData(resp.data);
-    });
-  };
+  // var getShotChartData = function(playerID, year) {
+  //   return $http({
+  //     method: 'GET',
+  //     //url: 'http://stats.nba.com/stats/playerdashboardbyshootingsplits?DateFrom=&DateTo=&GameSegment=&LastNGames=0&LeagueID=00&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=0&PaceAdjust=N&PerMode=Totals&Period=0&PlayerID=' + playerID + '&PlusMinus=N&Rank=N&Season=' + year + '&SeasonSegment=&SeasonType=Regular+Season&ShotClockRange=&VsConference=&VsDivision='
+  //     //url: '/test'
+  //     url: '/shotchartdata/' + playerID + '/' + year
+  //   }).then(function(resp) {
+  //     console.log('Data recieved by client');
+  //     parseData(resp.data);
+  //   });
+  // };
 
   // var statSelector = function() {
   //   console.log($scope.statType);
@@ -168,10 +168,14 @@ angular.module('bballApp.util', [])
 
   return {
     // statSelector: statSelector
-    getShotChartData: getShotChartData,
+    //getShotChartData: getShotChartData,
     parseData: parseData,
     series: series,
-    seriesSample: seriesSample
+    seriesSample: seriesSample,
+    playerID: null, //fulfilled by form.js
+    year: null, //fulfilled by form.js
+    missed: missed,
+    made: made
   };
 
 });
