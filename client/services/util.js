@@ -1,6 +1,15 @@
 angular.module('bballApp.services', [])
 
-.factory('Form', function($scope) {
+.factory('Utility', function($scope, $http) {
+
+  var getShotChart = function(player, year, statType) {
+    return $http({
+      method: 'GET',
+      url: '/' + playerID + '/' + year + '/' + statType
+    }).then(function(resp) {
+      return resp.data;
+    });
+  };
 
   // var statSelector = function() {
   //   console.log($scope.statType);
@@ -11,6 +20,6 @@ angular.module('bballApp.services', [])
 
   return {
     // statSelector: statSelector
+    getShotChart: getShotChart
   };
-
 })
