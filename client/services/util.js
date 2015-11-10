@@ -36,7 +36,7 @@ angular.module('bballApp.util', [])
       //url: '/test'
       url: '/shotchartdata/' + playerID + '/' + year
     }).then(function(resp) {
-      console.log('Data recieved by client:', resp.data);
+      console.log('Data recieved by client');
       parseData(resp.data);
     });
   };
@@ -163,7 +163,9 @@ angular.module('bballApp.util', [])
   return {
     // statSelector: statSelector
     getShotChartData: getShotChartData,
-    series: series
+    parseData: parseData,
+    series: series,
+    seriesSample: seriesSample
   };
 
 });
