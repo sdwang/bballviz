@@ -2,6 +2,33 @@ angular.module('bballApp.util', [])
 
 .factory('Utility', function($http) {
 
+  var series = [{
+                  name: 'Shot\'s Missed',
+                  color: 'rgba(223, 83, 83, .5)',
+                  data: []
+                },
+                {
+                  name: 'Shot\'s Made',
+                  color: 'rgba(119, 152, 191, .5)',
+                  data: []
+                }];
+
+  var parseData = function(array) {
+    //X-LOC: i=17, Y-LOC: i=18, madeFlag: i=20
+    for(var i = 0; i < array.length; i++) {
+      var shot = [];
+      shot[0] = array[i][17];
+      shot[1] = array[i][18];
+      if(array[i][20] === 1) {
+        series[1].data.push(shot);
+      } else if(array[i][20] === 0) {
+        series[0].data.push(shot);
+      }
+    }
+    console.log(series);
+  };
+
+
   var getShotChartData = function(playerID, year) {
     return $http({
       method: 'GET',
@@ -10,7 +37,7 @@ angular.module('bballApp.util', [])
       url: '/shotchartdata/' + playerID + '/' + year
     }).then(function(resp) {
       console.log('Data recieved by client:', resp.data);
-      return resp.data;
+      parseData(resp.data);
     });
   };
 
@@ -21,7 +48,8 @@ angular.module('bballApp.util', [])
   //   submitElement.attr('ui-sref', $scope.statType);
   // };
 
-  var series =  [{
+
+  var seriesSample =  [{
             name: 'Shot\'s Missed',
             color: 'rgba(223, 83, 83, .5)',
             data: [[161.2, 51.6], [167.5, 59.0], [159.5, 49.2], [157.0, 63.0], [155.8, 53.6],
