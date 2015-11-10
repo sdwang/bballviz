@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var helpers = require('./helpers');
+var promise = require('bluebird');
 
 var app = express();
 
@@ -19,8 +20,17 @@ app.get('/', function(req, res) {
 
 app.get('/shotchartdata/*', function(req, res, next) {
   console.log('getting to server');
-  helpers.reqShotChartData(req.originalUrl);
-  res.status(200).send('Test GET request recieved by server');
+  var reqShotChartDataPromise = promise.promisify(helpers.reqShotChartData);
+  reqShotChartDataPromise(req.originalUrl)
+    .then(function(data) {
+      console.log('data returned to server.js');
+      console.log(data);
+      return res.status(200).send(data);
+    })
+    .catch(function(err) {
+      console.log(err);
+    });
+  //res.status(200).send('Test GET request recieved by server');
   next();
 });
 
