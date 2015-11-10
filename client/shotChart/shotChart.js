@@ -1,6 +1,9 @@
 angular.module('bballApp.shotChart', [])
 
 .controller('ShotChartController', ['$scope', 'Utility', function($scope, Utility) {
+  
+  $scope.series = Utility.series;
+
   $(function () {
     $('#container').highcharts({
         chart: {
@@ -48,36 +51,6 @@ angular.module('bballApp.shotChart', [])
               display: 'none'
           }
         },
-        // title: {
-        //     text: 'Height Versus Weight of 507 Individuals by Gender'
-        // },
-        // subtitle: {
-        //     text: 'Source: Heinz  2003'
-        // },
-        // xAxis: {
-        //     title: {
-        //         enabled: true,
-        //         text: 'Height (cm)'
-        //     },
-        //     startOnTick: true,
-        //     endOnTick: true,
-        //     showLastLabel: true
-        // },
-        // yAxis: {
-        //     title: {
-        //         text: 'Weight (kg)'
-        //     }
-        // },
-        // legend: {
-        //     layout: 'vertical',
-        //     align: 'left',
-        //     verticalAlign: 'top',
-        //     x: 100,
-        //     y: 70,
-        //     floating: true,
-        //     backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
-        //     borderWidth: 1
-        // },
         plotOptions: {
             scatter: {
                 marker: {
@@ -102,11 +75,11 @@ angular.module('bballApp.shotChart', [])
                 }
             }
         },
-        series: Utility.series
+        series: $scope.series
 
-    });
-});
+      });
+  });
 
-
+  console.log($scope.series);
 
 }]);
