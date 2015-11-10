@@ -4,8 +4,9 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="shotChart/shotChart.js"></script>
+    <script src="services/database.js"></script>
+    <script src="services/util.js"></script>
     <script src="form/form.js"></script>
-    <script src="services/services.js"></script>
     <script src="app.js"></script>
   </head>
   <body>
@@ -13,16 +14,17 @@
       Basketball Viz
     </h1>
     <form ng-controller="FormController">
-      <input type="text" placeholder="Find a player"></input>
-      <select>
-        <option value="year">Select a year</option>
+      <input ng-model="player" type="text" placeholder="Find a player"></input>
+      <select ng-model="year">
+        <option>Select a year</option>
+        <option value="2015-16">2015-16</option>
       </select>
       <select ng-model="statType">
         <option>Select a stat type</option>
         <option value="shotChart">Shot Chart</option>
         <option value="assistGraph">Assist Graph</option>
       </select>
-      <button id='submit' ng-click="statSelector()">
+      <button id='submit' ng-click="inputHandler()">
         Submit
       </button>
     </form>
