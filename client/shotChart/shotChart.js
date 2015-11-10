@@ -1,19 +1,10 @@
 angular.module('bballApp.shotChart', [])
 
 .controller('ShotChartController', ['$scope', '$http', 'Utility', function($scope, $http, Utility) {
-  
-  //$scope.series = Utility.series;
-  //var missed = Utility.missed;
-  // var playerID = Utility.playerID;
-  // console.log('playerID:', playerID);
-  // var missed = [[143,43],[32,233]];
-  //var made = [[-13,342],[-23,-10]];
 
   var getShotChartData = function(playerID, year) {
     return $http({
       method: 'GET',
-      //url: 'http://stats.nba.com/stats/playerdashboardbyshootingsplits?DateFrom=&DateTo=&GameSegment=&LastNGames=0&LeagueID=00&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=0&PaceAdjust=N&PerMode=Totals&Period=0&PlayerID=' + playerID + '&PlusMinus=N&Rank=N&Season=' + year + '&SeasonSegment=&SeasonType=Regular+Season&ShotClockRange=&VsConference=&VsDivision='
-      //url: '/test'
       url: '/shotchartdata/' + playerID + '/' + year
     }).then(function(resp) {
         Utility.parseData(resp.data);
@@ -95,7 +86,6 @@ angular.module('bballApp.shotChart', [])
                       }
                   }
               },
-              //series: $scope.series
                 series: [{name: 'Shot\'s Missed',
                   color: 'rgba(223, 83, 83, .5)',
                   data: missed
@@ -110,15 +100,6 @@ angular.module('bballApp.shotChart', [])
   };
 
   getShotChartData(Utility.playerID, Utility.year);
-
-  //$('#container').highcharts().addSeries($scope.series);
-
-  //console.log($scope.series);
-
-//  console.log($scope.series[0]);
-
-  //console.log('highcharts series', $('#container').highcharts().series);
-
   
 
 }]);
