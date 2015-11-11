@@ -19,7 +19,7 @@ angular.module('bballApp.shotChart', [])
                 backgroundColor: 'transparent',
                 //spacingTop: 500,
                 width: 1018,
-                height: 550,
+                height: 650,
                 // marginTop: 500,
                 // marginBottom: 10,
                 reflow: false, //Char will not resize with change in window size
@@ -50,7 +50,7 @@ angular.module('bballApp.shotChart', [])
               },
               yAxis: {
                 min: -20,
-                max: 200,
+                max: 250,
                 lineWidth: 0,
                 minorGridLineWidth: 0,
                 lineColor: 'transparent',
