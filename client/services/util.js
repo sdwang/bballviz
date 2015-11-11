@@ -31,7 +31,6 @@ angular.module('bballApp.util', [])
         missed.push(shot);
       }
     }
-    console.log(series[0].data[0][0], typeof series[0].data[0][0]);
   };
 
   var seriesSample =  [{
