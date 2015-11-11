@@ -1,6 +1,6 @@
 angular.module('bballApp.shotChart', [])
 
-.controller('ShotChartController', ['$scope', '$http', 'Utility', function($scope, $http, Utility) {
+.controller('ShotChartController', ['$scope', '$http', '$state', 'Utility', function($scope, $http, $state, Utility) {
 
   var getShotChartData = function(playerID, year) {
     return $http({
@@ -8,7 +8,7 @@ angular.module('bballApp.shotChart', [])
       url: '/shotchartdata/' + playerID + '/' + year
     }).then(function(resp) {
         Utility.parseData(resp.data);
-        console.log('Data recieved by client');
+        console.log('Data recieved by client (ShotChartController)');
         var missed = Utility.missed;
         var made = Utility.made;
         $(function () {
@@ -16,7 +16,24 @@ angular.module('bballApp.shotChart', [])
               chart: {
                 type: 'scatter',
                 zoomType: 'xy',
-                backgroundColor: 'transparent'
+                backgroundColor: 'transparent',
+                //spacingTop: 500,
+                width: 1018,
+                height: 550,
+                // marginTop: 500,
+                // marginBottom: 10,
+                reflow: false, //Char will not resize with change in window size
+                style: {
+                  position: 'absolute',
+                  bottom: 0
+                }
+              },
+
+              loading: {
+                style: {
+                  position: 'absolute',
+                  bottom: 0
+                }
               },
 
               xAxis: {
@@ -87,11 +104,11 @@ angular.module('bballApp.shotChart', [])
                   }
               },
                 series: [{name: 'Shot\'s Missed',
-                  color: 'rgba(223, 83, 83, .5)',
+                  color: 'rgba(223, 83, 83, .75)',
                   data: missed
                 }, {
                   name: 'Shot\'s Made',
-                  color: 'rgba(119, 152, 191, .5)',
+                  color: 'rgba(25, 25, 112, .75)',
                   data: made
                 }]
             });
