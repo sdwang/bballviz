@@ -13,7 +13,6 @@ angular.module('bballApp.form', [])
     season.value = currentSeason;
     season.displayName = currentSeason;
     $scope.seasons.push(season);
-    console.log(season);
     currentYear++;
   }
 
