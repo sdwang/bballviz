@@ -14,11 +14,22 @@ var nameParser = function(name) {
 };
 
 var playerDatabase = {};
+var playerList = [];
 
 for(var i = 0; i < players.length; i++) {
-  playerDatabase[nameParser(players[i][1])] = players[i][0];
+  var name = nameParser(players[i][1]);
+  playerDatabase[name] = players[i][0];
+  var player = {
+    name: name,
+    id: players[i][0],
+    search: name.toLowerCase()
+  };
+  playerList.push(player);
 }
 
-module.exports = playerDatabase;
+module.exports = {
+  playerDatase: playerDatabase,
+  playerList: playerList
+};
 
-console.log(playerDatabase);
+console.log(playerList);
