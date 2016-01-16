@@ -3,7 +3,6 @@ angular.module('bballApp.form', [])
 .controller('FormController', ['$scope', '$state', 'Utility', 'Database', function($scope, $state, Utility, Database) {
   
   $scope.seasons = [];
-  $scope.players = [{id: 123123, name: 'sample player'}];
   $scope.selectedPlayer;
 
   var currentYear = 1946;
@@ -19,7 +18,7 @@ angular.module('bballApp.form', [])
   }
 
   $scope.selectedItemChange = function(item) {
-    $scope.selectedPlayer = item.value;
+    $scope.selectedPlayer = item.name;
   }
 
   $scope.searchTextChange = function(searchText) {
@@ -38,43 +37,14 @@ angular.module('bballApp.form', [])
     return Database.playerDatabase[player];
   };
 
-  $scope.myDta = [{
-      value: "Stephen Curry",
-      display: "Stephen Curry"
-  }, {
-      value: "banana",
-      display: "banana"
-  }, {
-      value: "gauva",
-      display: "gauva"
-  }, {
-      value: "melon",
-      display: "melon"
-  }, {
-      value: "potato",
-      display: "potato"
-  }, {
-      value: "carrot",
-      display: "carrot"
-  }, {
-      value: "cauliflower",
-      display: "cauliflower"
-  }, {
-      value: "jasmine",
-      display: "jasmine"
-  }, {
-      value: "cabbage",
-      display: "cabbage"
-  }, {
-      value: "peas",
-      display: "peas"
-  }];
   $scope.getMatches = function (text) {
+    if(text !== null) {
       text = text.toLowerCase();
-      var ret = $scope.myDta.filter(function (d) {
-          return d.display.startsWith(text);
-      });
-      return ret;
-  }
+    };
+    var ret = Database.playerList.filter(function (d) {
+        return d.search.startsWith(text);
+    });
+    return ret;
+  };
 
 }]);

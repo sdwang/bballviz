@@ -4029,6 +4029,7 @@ angular.module('bballApp.database', [])
     'Jim Zoet': 78647,
     'Bill Zopf': 78648,
     'Matt Zunic': 78650
+};
 
     var playerList = [ { name: 'Alaa Abdelnaby', id: 76001, search: 'alaa abdelnaby' },
   { name: 'Zaid Abdul-Aziz', id: 76002, search: 'zaid abdul-aziz' },
@@ -8918,8 +8919,7 @@ angular.module('bballApp.database', [])
     search: 'derrick zimmerman' },
   { name: 'Jim Zoet', id: 78647, search: 'jim zoet' },
   { name: 'Bill Zopf', id: 78648, search: 'bill zopf' },
-  { name: 'Matt Zunic', id: 78650, search: 'matt zunic' } ]
-};
+  { name: 'Matt Zunic', id: 78650, search: 'matt zunic' } ];
 
 return {
  playerDatabase: playerDatabase,

@@ -29,11 +29,11 @@
         md-search-text="searchText"
         md-search-text-change="searchTextChange(searchText)"
         md-items="item in getMatches(searchText)"
-        md-item-text="item.display"
+        md-item-text="item.name"
         md-min-length="0"
         placeholder="Search for a player">
           <md-item-template>
-            <span md-highlight-text="searchText">{{item.display}}</span>
+            <span md-highlight-text="searchText">{{item.name}}</span>
           </md-item-template>
           <md-not-found>No matches found.</md-not-found>
       </md-autocomplete>
