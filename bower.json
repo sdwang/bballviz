@@ -1,0 +1,24 @@
+{
+  "name": "bower.json",
+  "homepage": "https://github.com/sdwang/2015-10-mvp",
+  "authors": [
+    "Si <siwang22@gmail.com>"
+  ],
+  "description": "bower dependencies",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.7",
+    "angular": "~1.4.7",
+    "angular-ui-router": "ui-router#~0.2.15",
+    "jquery": "~2.1.4"
+  }
+}
