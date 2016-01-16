@@ -17,6 +17,7 @@ angular.module('bballApp.form', [])
   }
 
   $scope.inputHandler = function() {
+    console.log('inputHandler called');
     var submitElement = angular.element(document.querySelector('#submit'));
     submitElement.attr('ui-sref', this.statType);
     Utility.playerID = this.getPlayerID(this.player);
