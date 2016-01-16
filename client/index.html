@@ -21,7 +21,7 @@
     <form class="pure-form" ng-controller="FormController">
       <input ng-model="player" type="text" placeholder="Find a player"></input>
       <select ng-model="year">
-        <option ng-repeat="season in seasons" value="{{season.value}}">{{season.displayName}}</option>
+        <option ng-repeat="season in seasons" value="{{season.value}}">{season.displayName}</option>
         <!-- <option>Select a year</option>
         <option value="2015-16">2015-16</option> -->
       </select>
