@@ -3,7 +3,8 @@ var app = angular.module('bballApp', [
   'bballApp.util',
   'bballApp.shotChart',
   'bballApp.form',
-  'ui.router'])
+  'ui.router',
+  'ngMaterial'])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/");
