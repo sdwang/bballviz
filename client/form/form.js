@@ -41,10 +41,10 @@ angular.module('bballApp.form', [])
     if(text !== null) {
       text = text.toLowerCase();
     };
-    var ret = Database.playerList.filter(function (d) {
-        return d.search.startsWith(text);
+    var matches = Database.playerList.filter(function(player) {
+        return player.search.startsWith(text);
     });
-    return ret;
+    return matches;
   };
 
 }]);
