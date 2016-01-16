@@ -17,6 +17,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon ./server/app.js"
+    "start": "nodemon ./server/app.js",
+    "postinstall": "bower install"
   }
 }
