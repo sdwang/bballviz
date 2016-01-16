@@ -4,7 +4,7 @@ angular.module('bballApp.form', [])
   
   $scope.seasons = [];
 
-  var currentYear = 1996;
+  var currentYear = 1946;
 
   while(currentYear <= 2015) {
     var season = {};
