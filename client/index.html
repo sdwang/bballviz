@@ -51,7 +51,7 @@
           </md-autocomplete>
           </div>
           <!-- <input ng-model="player" type="text" placeholder="Find a player"></input> -->
-          <select ng-model="select.year" material-select ng-click="setOverflow()">
+          <select ng-model="select.year" material-select>
             <option ng-repeat="season in seasons" value="{{season.value}}">{{season.displayName}}</option>
           </select>
           <select ng-model="select.statType" material-select>

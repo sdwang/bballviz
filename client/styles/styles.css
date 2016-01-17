@@ -4,5 +4,18 @@
 
 .player-select {
   width: 30%;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.input-field input[type=search] {
+  padding-left: 10px;
+}
+
+.select-wrapper {
+  width: 20%;
+  margin-left: 10px;
+  margin-right: 10px;
   display: inline-block;
 }
