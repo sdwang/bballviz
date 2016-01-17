@@ -151,7 +151,7 @@ angular.module('bballApp.util', [])
     playerID: null, //fulfilled by form.js
     year: null, //fulfilled by form.js
     missed: missed,
-    made: made
+    made: made,
   };
 
 });

@@ -17,7 +17,7 @@ angular.module('bballApp.form', [])
     $scope.seasons.push(season);
     currentYear--;
   }
-  
+
   $scope.selectedItemChange = function(item) {
     $scope.selectedPlayer = item.name;
   }
@@ -31,6 +31,7 @@ angular.module('bballApp.form', [])
     submitElement.attr('ui-sref', this.select.statType);
     Utility.playerID = this.getPlayerID($scope.selectedPlayer);
     Utility.year = this.select.year;
+    $('.loading-gif').removeClass('hidden');
     $state.go(this.select.statType, undefined, {reload: true});
   };
 

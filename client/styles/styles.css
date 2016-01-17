@@ -3,6 +3,10 @@ h1 {
   margin-left: 20px;
 }
 
+.hidden {
+  display: none;
+}
+
 .loading-gif {
   position: absolute;
   width: 30px;

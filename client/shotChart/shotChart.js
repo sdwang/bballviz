@@ -112,7 +112,8 @@ angular.module('bballApp.shotChart', [])
                   data: made
                 }]
             });
-        }); //end of chart
+        });//end of chart
+        $('.loading-gif').addClass('hidden');
     });
   };
 
