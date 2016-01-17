@@ -1,3 +1,8 @@
 .dropdown-content {
   overflow-y: scroll !important;
 }
+
+.player-select {
+  width: 30%;
+  display: inline-block;
+}
