@@ -34,7 +34,7 @@
     <div class="row">
       <form class="col s12" ng-controller="FormController">
         <div class="row">
-          <div input-field class="player-select">
+<!--           <div input-field class="player-select">
           <md-autocomplete
             md-selected-item="player"
             md-selected-item-change="selectedItemChange(item)"
@@ -49,7 +49,7 @@
               </md-item-template>
               <md-not-found>No matches found.</md-not-found>
           </md-autocomplete>
-          </div>
+          </div> -->
           <select ng-model="select.year" material-select>
             <option value="" disabled selected>Season</option>
             <option ng-repeat="season in seasons" value="{{season.value}}">{{season.displayName}}</option>
