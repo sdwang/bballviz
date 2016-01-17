@@ -20,10 +20,12 @@ angular.module('bballApp.form', [])
 
   $scope.selectedItemChange = function(item) {
     $scope.selectedPlayer = item.name;
+    console.log($scope.selectedPlayer);
   }
 
   $scope.searchTextChange = function(searchText) {
     $scope.selectedPlayer = searchText;
+    console.log($scope.selectedPlayer);
   }
 
   $scope.inputHandler = function() {
@@ -31,6 +33,7 @@ angular.module('bballApp.form', [])
     submitElement.attr('ui-sref', this.select.statType);
     Utility.playerID = this.getPlayerID($scope.selectedPlayer);
     Utility.year = this.select.year;
+    console.log(Utility.year);
     $('.loading-gif').removeClass('hidden');
     $state.go(this.select.statType, undefined, {reload: true});
   };

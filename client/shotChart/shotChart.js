@@ -113,6 +113,9 @@ angular.module('bballApp.shotChart', [])
                 }]
             });
         });//end of chart
+        //Empty data so that next player lookup will not contain data from previous player lookup
+        Utility.made.splice(0, Utility.made.length);
+        Utility.missed.splice(0, Utility.missed.length)
         $('.loading-gif').addClass('hidden');
     });
   };
