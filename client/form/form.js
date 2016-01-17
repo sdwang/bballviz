@@ -4,17 +4,18 @@ angular.module('bballApp.form', [])
   
   $scope.seasons = [];
   $scope.selectedPlayer;
+  $scope.select = {};
 
-  var currentYear = 1946;
+  var currentYear = 2016;
 
-  while(currentYear <= 2015) {
+  while(currentYear > 1946) {
     var season = {};
-    var nextYear = currentYear + 1;
-    var currentSeason = currentYear.toString() + '-' + nextYear.toString().slice(2);
+    var prevYear = currentYear - 1;
+    var currentSeason = prevYear.toString() + '-' + currentYear.toString().slice(2);
     season.value = currentSeason;
     season.displayName = currentSeason;
     $scope.seasons.push(season);
-    currentYear++;
+    currentYear--;
   }
 
   $scope.selectedItemChange = function(item) {
@@ -27,10 +28,10 @@ angular.module('bballApp.form', [])
 
   $scope.inputHandler = function() {
     var submitElement = angular.element(document.querySelector('#submit'));
-    submitElement.attr('ui-sref', this.statType);
+    submitElement.attr('ui-sref', this.select.statType);
     Utility.playerID = this.getPlayerID($scope.selectedPlayer);
-    Utility.year = this.year;
-    $state.go(this.statType, undefined, {reload: true});
+    Utility.year = this.select.year;
+    $state.go(this.select.statType, undefined, {reload: true});
   };
 
   $scope.getPlayerID = function(player) {

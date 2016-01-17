@@ -5,22 +5,23 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="bower_components/angular-aria/angular-aria.js"></script> 
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script> 
-    <script src="bower_components/angular-material/angular-material.min.js"></script> 
     <script src="services/database.js"></script>
     <script src="services/util.js"></script>
     <script src="app.js"></script>
     <script src="shotChart/shotChart.js"></script>
     <script src="form/form.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script> 
+    <script src="bower_components/angular-materialize/src/angular-materialize.js"></script>    
     <script type="text/javascript" src="bower_components/Materialize/dist/js/materialize.min.js"></script>
     <script src="http://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <!-- <link rel="stylesheet" type="text/css" href="styles/styles.css" />
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"> -->
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.min.css"  media="screen,projection"/>
@@ -32,7 +33,7 @@
     <div class="row">
       <form class="col s12" ng-controller="FormController">
         <div class="row">
-          <div class="input-field col s3">
+          <div input-field>
           <md-autocomplete
             md-selected-item="player"
             md-selected-item-change="selectedItemChange(item)"
@@ -49,14 +50,14 @@
           </md-autocomplete>
           </div>
           <!-- <input ng-model="player" type="text" placeholder="Find a player"></input> -->
-          <div class="input-field col s3">
-            <select ng-model="year" size="10">
+          <div input-field>
+            <select ng-model="select.year" size="10">
               <option ng-repeat="season in seasons" value="{{season.value}}">{{season.displayName}}</option>
             </select>
             <label>Year</label>
           </div>
-          <div class="input-field col s3">
-            <select ng-model="statType">
+          <div input-field>
+            <select ng-model="select.statType">
               <option value="shotChart">Shot Chart</option>
               <option value="assistGraph">Assist Graph</option>
             </select>

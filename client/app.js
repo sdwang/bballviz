@@ -4,7 +4,8 @@ var app = angular.module('bballApp', [
   'bballApp.shotChart',
   'bballApp.form',
   'ui.router',
-  'ngMaterial'])
+  'ngMaterial',
+  'ui.materialize'])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/");
