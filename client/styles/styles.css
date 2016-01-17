@@ -3,6 +3,14 @@ h1 {
   margin-left: 20px;
 }
 
+.loading-gif {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  margin-top: 17px;
+  margin-left: 20px;
+}
+
 .dropdown-content {
   overflow-y: scroll !important;
 }
