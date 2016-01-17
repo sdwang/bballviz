@@ -18,6 +18,10 @@ angular.module('bballApp.form', [])
     currentYear--;
   }
 
+  $scope.setOverflow = function() {
+    console.log('setting overflow');
+  }
+  
   $scope.selectedItemChange = function(item) {
     $scope.selectedPlayer = item.name;
   }

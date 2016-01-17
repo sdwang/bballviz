@@ -20,11 +20,12 @@
     <script type="text/javascript" src="bower_components/Materialize/dist/js/materialize.min.js"></script>
     <script src="http://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <link rel="stylesheet" type="text/css" href="styles/reset.css"/>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
   </head>
   <body>
     <h1>
@@ -50,19 +51,13 @@
           </md-autocomplete>
           </div>
           <!-- <input ng-model="player" type="text" placeholder="Find a player"></input> -->
-          <div input-field>
-            <select ng-model="select.year" size="10">
-              <option ng-repeat="season in seasons" value="{{season.value}}">{{season.displayName}}</option>
-            </select>
-            <label>Year</label>
-          </div>
-          <div input-field>
-            <select ng-model="select.statType">
-              <option value="shotChart">Shot Chart</option>
-              <option value="assistGraph">Assist Graph</option>
-            </select>
-            <label>Chart Type</label>
-          </div>
+          <select ng-model="select.year" material-select ng-click="setOverflow()">
+            <option ng-repeat="season in seasons" value="{{season.value}}">{{season.displayName}}</option>
+          </select>
+          <select ng-model="select.statType" material-select>
+            <option value="shotChart">Shot Chart</option>
+            <option value="assistGraph">Assist Graph</option>
+          </select>
           <button id='submit' ng-click="inputHandler()" class="pure-button pure-button-primary">
             Submit
           </button>
@@ -73,6 +68,10 @@
     <script>
       $(document).ready(function() {
         $('select').material_select();
+        $('.select-wrapper').on('click', function() {
+          console.log('select clicked');
+          $('ul').css('overflow-y', 'scroll');
+        });
       });
     </script>
   </body>
