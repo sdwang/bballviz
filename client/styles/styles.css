@@ -1,6 +1,8 @@
 h1 {
   font-weight: 600;
   margin-left: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .hidden {
@@ -37,3 +39,9 @@ h1 {
   margin-right: 10px;
   display: inline-block;
 }
+
+.form-container {
+  position: relative;
+  z-index: 1;
+}
+
