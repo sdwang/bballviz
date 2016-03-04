@@ -43,13 +43,15 @@ angular.module('bballApp.form', [])
   };
 
   $scope.getMatches = function (text) {
-    if(text !== null) {
-      text = text.toLowerCase();
-    };
-    var matches = Database.playerList.filter(function(player) {
-        return player.search.startsWith(text);
-    });
-    return matches;
+    if(text !== "") {
+      if(text !== null) {
+        text = text.toLowerCase();
+      };
+      var matches = Database.playerList.filter(function(player) {
+          return player.search.startsWith(text);
+      });
+      return matches;
+    }
   };
 
 }]);
