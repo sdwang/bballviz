@@ -2,7 +2,8 @@
   "name": "nba_shotcharts",
   "version": "0.0.0",
   "engines": {
-    "node": "4.2.1"
+    "node": "4.2.1",
+    "npm": "2.11.3"
   },
   "main": "",
   "license": "",
@@ -21,7 +22,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node ./server/app.js",
+    "start": "node server/server.js",
     "postinstall": "bower cache clean && bower install"
   }
 }
