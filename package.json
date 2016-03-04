@@ -17,7 +17,8 @@
     "jquery": "^2.1.4",
     "promises": "^0.2.5",
     "q": "^1.4.1",
-    "request": "^2.65.0"
+    "request": "^2.65.0",
+    "angular-ui-router": "^0.2.15"
   },
   "devDependencies": {},
   "scripts": {
