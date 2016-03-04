@@ -18,7 +18,6 @@
     "promises": "^0.2.5",
     "q": "^1.4.1",
     "request": "^2.65.0"
-    // "ui-router": "^0.2.15"
   },
   "devDependencies": {},
   "scripts": {
