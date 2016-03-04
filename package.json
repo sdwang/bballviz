@@ -21,7 +21,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon ./server/app.js",
+    "start": "node ./server/app.js",
     "postinstall": "bower cache clean && bower install"
   }
 }
