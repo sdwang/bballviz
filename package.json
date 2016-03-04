@@ -1,6 +1,9 @@
 {
   "name": "nba_shotcharts",
   "version": "0.0.0",
+  "engines": {
+    "node": "4.2.1"
+  },
   "main": "",
   "license": "",
   "dependencies": {
