@@ -18,7 +18,7 @@ var app = angular.module('bballApp', [
   .state('assistGraph', {
     url: '/assistGraph',
     templateUrl: 'assistGraph/assistGraph.html',
-    // controller: 'ShotChartController'
+    // controller: ''
   })
   .state('shotChartLoaded', {
     url: '/shotChart/loaded',

@@ -17,11 +17,8 @@ angular.module('bballApp.shotChart', [])
                 type: 'scatter',
                 zoomType: 'xy',
                 backgroundColor: 'transparent',
-                //spacingTop: 500,
                 width: 1018,
                 height: 1950,
-                // marginTop: 500,
-                // marginBottom: 10,
                 reflow: false, //Char will not resize with change in window size
                 style: {
                   position: 'absolute',
