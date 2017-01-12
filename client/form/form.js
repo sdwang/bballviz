@@ -1,12 +1,12 @@
 angular.module('bballApp.form', [])
 
 .controller('FormController', ['$scope', '$state', 'Utility', 'Database', function($scope, $state, Utility, Database) {
-  
+
   $scope.seasons = [];
   $scope.selectedPlayer;
   $scope.select = {};
 
-  var currentYear = 2016;
+  var currentYear = 2017;
 
   while(currentYear > 1946) {
     var season = {};
@@ -19,13 +19,15 @@ angular.module('bballApp.form', [])
   }
 
   $scope.selectedItemChange = function(item) {
-    $scope.selectedPlayer = item.name;
-    console.log($scope.selectedPlayer);
+    if(item) {
+      $scope.selectedPlayer = item.name;
+      console.log('selected item change: ', $scope.selectedPlayer);
+    }
   }
 
   $scope.searchTextChange = function(searchText) {
     $scope.selectedPlayer = searchText;
-    console.log($scope.selectedPlayer);
+    console.log('selected text change: ', $scope.selectedPlayer);
   }
 
   $scope.inputHandler = function() {

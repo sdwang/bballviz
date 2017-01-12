@@ -17,6 +17,10 @@ h1 {
   margin-left: 20px;
 }
 
+.md-autocomplete-suggestions-container{
+    top: 170.906px !important;
+}
+
 .dropdown-content {
   overflow-y: scroll !important;
 }
@@ -44,4 +48,3 @@ h1 {
   position: relative;
   z-index: 1;
 }
-
