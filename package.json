@@ -1,6 +1,6 @@
 {
   "name": "nba_shotcharts",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "engines": {
     "node": "4.2.1",
     "npm": "2.11.3"
@@ -8,7 +8,7 @@
   "main": "",
   "license": "",
   "dependencies": {
-    "angular": "^1.4.7",
+    "angular": "1.5.9",
     "bluebird": "^3.0.5",
     "body-parser": "^1.14.1",
     "bower": "^1.7.2",
@@ -18,7 +18,7 @@
     "promises": "^0.2.5",
     "q": "^1.4.1",
     "request": "^2.65.0",
-    "angular-ui-router": "^0.2.15"
+    "angular-ui-router": "0.3.2"
   },
   "devDependencies": {},
   "scripts": {
