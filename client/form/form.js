@@ -32,12 +32,12 @@ angular.module('bballApp.form', [])
 
   $scope.inputHandler = function() {
     var submitElement = angular.element(document.querySelector('#submit'));
-    submitElement.attr('ui-sref', this.select.statType);
+    submitElement.attr('ui-sref', 'shotChart');
     Utility.playerID = this.getPlayerID($scope.selectedPlayer);
     Utility.year = this.select.year;
     console.log(Utility.year);
     $('.loading-gif').removeClass('hidden');
-    $state.go(this.select.statType, undefined, {reload: true});
+    $state.go('shotChart', undefined, {reload: true});
   };
 
   $scope.getPlayerID = function(player) {
