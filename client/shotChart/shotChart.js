@@ -3,10 +3,18 @@ angular.module('bballApp.shotChart', [])
 .controller('ShotChartController', ['$scope', '$http', '$state', 'Utility', function($scope, $http, $state, Utility) {
 
   var getShotChartData = function(playerID, year) {
+    $('#error-failed-retrieval').addClass('hidden');
+    $('#error-unavailable').addClass('hidden');
+
     return $http({
       method: 'GET',
       url: '/shotchartdata/' + playerID + '/' + year
     }).then(function(resp) {
+        if(resp.data.length === 0) {
+          $('.loading-gif').addClass('hidden');
+          $('#error-unavailable').removeClass('hidden');
+          return;
+        }
         Utility.parseData(resp.data);
         console.log('Data recieved by client (ShotChartController)');
         var missed = Utility.missed;
@@ -118,6 +126,7 @@ angular.module('bballApp.shotChart', [])
     }, function(err) {
       console.log(err);
       $('.loading-gif').addClass('hidden');
+      $('#error-failed-retrieval').removeClass('hidden');
     });
   };
 

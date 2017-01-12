@@ -6,7 +6,7 @@ h1 {
 }
 
 .hidden {
-  display: none;
+  visibility: hidden;
 }
 
 .loading-gif {
@@ -17,8 +17,13 @@ h1 {
   margin-left: 20px;
 }
 
+.error-message {
+  color: #f43232;
+  margin-left: 20px;
+}
+
 .md-autocomplete-suggestions-container{
-    top: 170.906px !important;
+    top: 180px !important;
 }
 
 .dropdown-content {
