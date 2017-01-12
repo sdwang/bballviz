@@ -24,6 +24,7 @@ app.get('/shotchartdata/*', function(req, res, next) {
     })
     .catch(function(err) {
       console.log(err);
+      res.status(400).send(err);
     });
 });
 

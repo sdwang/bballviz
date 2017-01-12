@@ -16,9 +16,11 @@
     "tests"
   ],
   "dependencies": {
-    "angular-route": "~1.4.7",
-    "angular": "~1.4.7",
-    "angular-ui-router": "ui-router#~0.2.15",
+    "angular-route": "1.5.9",
+    "angular": "1.5.9",
+    "angular-animate": "1.5.9",
+    "angular-aria": "1.5.9",
+    "angular-ui-router": "ui-router#~0.3.2",
     "jquery": "~2.1.4",
     "angular-material": "~1.0.2",
     "Materialize": "materialize#~0.97.5",

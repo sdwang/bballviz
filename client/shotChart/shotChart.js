@@ -115,10 +115,13 @@ angular.module('bballApp.shotChart', [])
         Utility.made.splice(0, Utility.made.length);
         Utility.missed.splice(0, Utility.missed.length)
         $('.loading-gif').addClass('hidden');
+    }, function(err) {
+      console.log(err);
+      $('.loading-gif').addClass('hidden');
     });
   };
 
   getShotChartData(Utility.playerID, Utility.year);
-  
+
 
 }]);
