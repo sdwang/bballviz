@@ -14,8 +14,11 @@ module.exports.reqShotChartData = function(url, callback) {
   request(requestUrl,
     function (error, response, body) {
       if (!error && response.statusCode == 200) {
+        console.log('recieved player data');
         deferred.resolve(JSON.parse(body).resultSets[0].rowSet);
       } else {
+        console.log('Could not retrieve player information');
+        console.log(error);
         deferred.reject('Could not retrieve player information');
       }
     });
